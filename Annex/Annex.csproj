@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1739EA01-DF8B-4147-97F9-1EDBCDDB84D0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Annex</RootNamespace>
+    <AssemblyName>Annex</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\Users\Andrew\Documents\Annex\Annex</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="osu!, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\Documents\Annex\dev\osu!.exe</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Annex.cs" />
+    <Compile Include="eventmanager\EventManager.cs" />
+    <Compile Include="eventmanager\EventMethod.cs" />
+    <Compile Include="eventmanager\events\GuiRenderEvent.cs" />
+    <Compile Include="eventmanager\events\KeyPressEvent.cs" />
+    <Compile Include="eventmanager\events\MapSelectionChangeEvent.cs" />
+    <Compile Include="eventmanager\events\MapSettingEvent.cs" />
+    <Compile Include="eventmanager\events\OptionsInitializeEvent.cs" />
+    <Compile Include="eventmanager\events\ScoreSubmitEvent.cs" />
+    <Compile Include="eventmanager\imp\IEvent.cs" />
+    <Compile Include="eventmanager\imp\IListener.cs" />
+    <Compile Include="forms\ServerSelectorForm.cs" />
+    <Compile Include="forms\ServerSelectorForm.Designer.cs" />
+    <Compile Include="gui\components\ModStatComponent.cs" />
+    <Compile Include="gui\GuiMapSettings.cs" />
+    <Compile Include="gui\GuiScreenWrapper.cs" />
+    <Compile Include="hooks\InGameHook.cs" />
+    <Compile Include="hooks\MapSettingHook.cs" />
+    <Compile Include="hooks\StringDeobfuscatorHook.cs" />
+    <Compile Include="mod\IMod.cs" />
+    <Compile Include="mod\ModManager.cs" />
+    <Compile Include="mod\mods\MapSettingsMod.cs" />
+    <Compile Include="mod\mods\ModSettings.cs" />
+    <Compile Include="placeholder\components\BoolObj.cs" />
+    <Compile Include="placeholder\components\CheckboxCheckedDelegate.cs" />
+    <Compile Include="placeholder\components\CompCheckbox.cs" />
+    <Compile Include="placeholder\components\CompLabel.cs" />
+    <Compile Include="placeholder\components\ComponentManager.cs" />
+    <Compile Include="placeholder\components\CompRect.cs" />
+    <Compile Include="placeholder\components\CompSlider.cs" />
+    <Compile Include="placeholder\components\Drawable.cs" />
+    <Compile Include="placeholder\components\GameHelper.cs" />
+    <Compile Include="placeholder\components\GuiOptions.cs" />
+    <Compile Include="placeholder\components\GuiScreen.cs" />
+    <Compile Include="placeholder\components\OptionsCheckbox.cs" />
+    <Compile Include="placeholder\components\SliderChanged.cs" />
+    <Compile Include="placeholder\Generated.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="servers\ServerBancho.cs" />
+    <Compile Include="servers\ServerBanchoAnnex.cs" />
+    <Compile Include="servers\ServerOffline.cs" />
+    <Compile Include="servers\OsuServer.cs" />
+    <Compile Include="servers\ServerRipple.cs" />
+    <Compile Include="util\Logger.cs" />
+    <Compile Include="util\ReflectionUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="forms\ServerSelectorForm.resx" />
+    <Content Include="placeholder\readme.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>

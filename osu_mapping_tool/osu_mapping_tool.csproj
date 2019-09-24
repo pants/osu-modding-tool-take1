@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DB76720C-A620-4562-BDE2-F62A90ECFA8F}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>osu_mapping_tool</RootNamespace>
+    <AssemblyName>osu_mapping_tool</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="dnlib, Version=1.6.0.0, Culture=neutral, PublicKeyToken=50e96378b6e77999">
+      <HintPath>..\..\..\Documents\Programming Utils\dnlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Ink, Version=1.7.2600.2180, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\..\..\Documents\Programming Utils\osubuddy\osu_lib\Microsoft.Ink.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4">
+      <HintPath>..\..\..\Documents\Programming Utils\osubuddy\osu_lib\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="osu!, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\Documents\Programming Utils\osubuddy\osu_lib\ww\osu!.exe</HintPath>
+    </Reference>
+    <Reference Include="osu!gameplay, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\Documents\Programming Utils\osubuddy\osu_lib\osu!gameplay.dll</HintPath>
+    </Reference>
+    <Reference Include="osu!spring, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\Documents\Programming Utils\osubuddy\osu_lib\osu!spring.dll</HintPath>
+    </Reference>
+    <Reference Include="osu!ui, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\Documents\Programming Utils\osubuddy\osu_lib\osu!ui.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="mapping\ClassMap.cs" />
+    <Compile Include="mapping\maps\options\ClassAnticheat.cs" />
+    <Compile Include="mapping\maps\options\ClassBeatmap.cs" />
+    <Compile Include="mapping\maps\options\ClassBeatmapManager.cs" />
+    <Compile Include="mapping\maps\options\ClassBoolObj.cs" />
+    <Compile Include="mapping\maps\options\ClassDefines.cs" />
+    <Compile Include="mapping\maps\options\ClassGameHelper.cs" />
+    <Compile Include="mapping\maps\options\ClassGuiScreen.cs" />
+    <Compile Include="mapping\maps\options\ClassInGame.cs" />
+    <Compile Include="mapping\maps\options\ClassModManager.cs" />
+    <Compile Include="mapping\maps\options\ClassOptCheckbox.cs" />
+    <Compile Include="mapping\maps\options\ClassOptions.cs" />
+    <Compile Include="mapping\maps\options\ClassOsu.cs" />
+    <Compile Include="mapping\maps\options\ClassPopupHandler.cs" />
+    <Compile Include="mapping\maps\options\ClassUrls.cs" />
+    <Compile Include="mapping\maps\options\ClassWebRequest.cs" />
+    <Compile Include="mapping\maps\options\ClassScore.cs" />
+    <Compile Include="mapping\maps\options\ClassSongSelection.cs" />
+    <Compile Include="mapping\maps\options\components\ClassCompCheckbox.cs" />
+    <Compile Include="mapping\maps\options\components\ClassCompRect.cs" />
+    <Compile Include="mapping\maps\options\components\ClassCompLabel.cs" />
+    <Compile Include="mapping\maps\options\components\ClassCompSlider.cs" />
+    <Compile Include="mapping\maps\options\hitobjects\ClassHitObjectManager.cs" />
+    <Compile Include="mapping\maps\options\hitobjects\ClassHitObjectSlider.cs" />
+    <Compile Include="mapping\MethodMap.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringDeobfuscator.cs" />
+    <Compile Include="util\CLRHelper.cs" />
+    <Compile Include="util\Optional.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\osu_mapping\osu_mapping.csproj">
+      <Project>{ccc44dd4-2aa5-4f28-bbf6-cedcab04d886}</Project>
+      <Name>osu_mapping</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
